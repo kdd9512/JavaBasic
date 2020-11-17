@@ -13,10 +13,8 @@ import java.util.Scanner;
  * 100점 만점. 100~90, 89~80, 79~70, 69~60, 59~0 기준으로 학점 부여.
  * 학점기준 : 수,우,미,양,가.
  * switch문으로 학점을 계산하도록 함.
- * name, kor, eng, mat, sum, mean, grd.
- * 이름, 국어, 영어, 수학, 총점, 평균, 등급.
- *
- *
+ * 변수명 : name, kor, eng, mat, sum, mean, grd.
+ *         이름, 국어, 영어, 수학, 총점, 평균, 등급.
  */
 public class SungJukV2 {
     public static void main(String[] args) {
@@ -63,16 +61,22 @@ public class SungJukV2 {
         //   이렇게 하면 아예 처음부터 mean값이 변환되어서 들어가므로 밑에서 출력명령을 하나하나 고치지 않아도 된다.
 
         // 값 출력
-        System.out.println("이름 = " + name);
-        System.out.println("국어 = " + kor);
-        System.out.println("수학 = " + mat);
-        System.out.println("영어 = " + eng);
-        System.out.println("-------------");
-        System.out.println("총점 = " + sum);
-        //System.out.println("평균 = "+ mean);
-        //System.out.printf("\n평균 = %.2f\n ",mean); // 1. printf 로 출력방식을 조정하여 소수점을 자르게 한다.
-        System.out.println("평균 = "+ mean);
-        System.out.println("학점 = " + grd);
+//        System.out.println("이름 = " + name);
+//        System.out.println("국어 = " + kor);
+//        System.out.println("수학 = " + mat);
+//        System.out.println("영어 = " + eng);
+//        System.out.println("-------------");
+//        System.out.println("총점 = " + sum);
+//        //System.out.println("평균 = "+ mean);
+//        //System.out.printf("\n평균 = %.2f\n ",mean); // 1. printf 로 출력방식을 조정하여 소수점을 자르게 한다.
+//        System.out.println("평균 = "+ mean);
+//        System.out.println("학점 = " + grd);
+        System.out.printf
+                ("이름 = %2s\n국어 = %2d\n수학 = %2d\n영어 = %2d\n-------------\n총점 = %2d\n평균 = %.2f\n학점 = %c\n",
+                name,kor,mat,eng,sum,mean,grd);
+        // 위에 주석처리된 println문과 출력결과가 같다.
+        // %d는 정수출력, %f는 실수출력, %.?f는 ?에 원하는 소수점 자리를 넣어 실수 소수점
+        // 조절, %s는 문자열, %c는 문자출력.
 
     }
 }
