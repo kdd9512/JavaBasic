@@ -43,6 +43,10 @@ public class SungJukV2c {
             mat[i] = scan.nextInt();
             System.out.print("영어성적 : ");
             eng[i] = scan.nextInt();
+            //현재 2번째 학생부터 이름을 입력할 수 없게 되어 있는데,
+            //수학성적 입력시, 같이 입력된 enter키가
+            //다음 데이터(이름) 입력시, 입력값으로
+            //자동전달되어 생기는 문제.
         }
 
         for (int i = 0; i <3; ++i) {
