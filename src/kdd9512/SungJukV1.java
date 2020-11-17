@@ -1,5 +1,7 @@
 package kdd9512;
 
+import java.util.Scanner;
+
 /**
 /* 파일명 : SungJukV1
  * 작성일 : 2020.11.17
@@ -14,23 +16,36 @@ package kdd9512;
  */
 public class SungJukV1 {
     public static void main(String[] args) {
-        String name = "";
-        String grd = "";
+        String name = "지현";
         int kor = 99, eng = 98, mat = 99;
-        int sum = kor+eng+mat;
-        int mean = sum/3;
+        int sum = 0;
+        double mean = 0.0;
+        char grd =  '가';
 
-        if(mean<=100 && mean <=90){
-            grd = "수 입니다";
+        sum = kor+mat+eng;
+        mean = sum/3;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("이름 = " + name);
+        System.out.println("국어 = " + kor);
+        System.out.println("수학 = " + mat);
+        System.out.println("영어 = " + eng);
+        System.out.println("-------------");
+        System.out.println("총점 = " + sum);
+        System.out.println("평균 = " + mean);
+        System.out.println("등급 = " + grd);
+        /*if(mean<=100 && mean <=90){
+            System.out.println("수");
         }else if(mean<=89 && mean <=80){
-            grd = "우 입니다";
+            System.out.println("우");
         }else if(mean<=79 && mean <=70){
-            grd = "미 입니다";
+            System.out.println("미");
         }else if(mean<=69 && mean <=60){
-            grd = "양 입니다";
+            System.out.println("양");
         }else if(mean<=59 && mean <=0){
-            grd = "가 입니다";
-        }
-        System.out.printf("학생명 : %2s, 총점 : %2d, 평균 = %2d, 학점 : %2s",name,sum,mean,grd);
+            System.out.println("가");
+
+        }*/
     }
 }
