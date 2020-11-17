@@ -3,7 +3,7 @@ package kdd9512;
 import java.util.Scanner;
 
 /**
-/* 파일명 : SungJukV1
+/* 파일명 : SungJukV2
  * 작성일 : 2020.11.17
  *
  * 프로그램설명 : 성적처리 프로그램 v1.
@@ -25,8 +25,10 @@ public class SungJukV2 {
         int sum = 0;
         double mean = 0.0;
         char grd = ' ';
+        grd = ' ';
         //변수선언
-        Scanner scan = new Scanner(System.in);
+
+        Scanner scan = new Scanner(System.in);//스캐너 입력 조건식
         System.out.println("이름");
         name = scan.nextLine();
         System.out.println("국어성적");
@@ -36,11 +38,12 @@ public class SungJukV2 {
         System.out.println("영어성적");
         eng = scan.nextInt();
 
+        //sum, mean 처리
         sum = kor+mat+eng;
         mean = (double)sum/3;
-        grd = ' ';
 
-        switch((int)(mean/10)){
+
+        switch((int)(mean/10)){//switch 이용한 grd처리.
             case 9 : grd = '수';
                 break;
             case 8 : grd = '우';
@@ -51,7 +54,7 @@ public class SungJukV2 {
                 break;
             default : grd = '가';
                 break;
-        }
+        }//switch 끝
         System.out.println("이름 = " + name);
         System.out.println("국어 = " + kor);
         System.out.println("수학 = " + mat);
