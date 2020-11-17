@@ -31,22 +31,32 @@ public class SungJukV2c {
 
         String fmt = "이름 : %2s\n국어 : %2d\n수학 : %2d\n영어 : %2d\n총점 : %2d\n평균 : %.2f\n학점 : %2c\n";
 
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < 3; ++i) {
             System.out.println((i + 1) + "번째 학생 성적 입력중....");
 
             System.out.print("이름 : ");
-            name[i] = scan.nextLine();
+            name[i] = sc.nextLine();
             System.out.print("국어성적 : ");
-            kor[i] = scan.nextInt();
+            kor[i] = Integer.parseInt(sc.nextLine());//숫자를 문자로 변환.
+            //kor[i] = sc.nextInt();
             System.out.print("수학성적 : ");
-            mat[i] = scan.nextInt();
+            mat[i] = sc.nextInt();
             System.out.print("영어성적 : ");
-            eng[i] = scan.nextInt();
+            eng[i] = sc.nextInt();
+            //sc.skip("\r\n|[\n\r]");
+
             //현재 2번째 학생부터 이름을 입력할 수 없게 되어 있는데,
-            //수학성적 입력시, 같이 입력된 enter키가
-            //다음 데이터(이름) 입력시, 입력값으로
-            //자동전달되어 생기는 문제.
+            //영어성적 입력시, 같이 입력된 enter키가
+            //다음 데이터(이름) 입력시, 입력값으로 자동전달되어 생기는 문제임.
+
+            //1. 영어성적 받는 scan 다음에 스캐너 변수명(여기선 sc).skip("\r\n|[\n\r]"); 을 입력한다.
+            //   이 명령어로 띄어쓰기(엔터)를 스킵한다.
+
+            //2. 국어성적을 String으로 받는다.
+            //   입력받을땐 숫자로 받되 이 값을 변환한다. Integer.parseInt(sc.nextLine()); 로 변환.
+            //   이 경우, 맨 아래 sc.skip("\r\n|[\n\r]"); 이 필요없음.
+
         }
 
         for (int i = 0; i <3; ++i) {
