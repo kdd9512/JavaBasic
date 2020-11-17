@@ -13,19 +13,34 @@ import java.util.Scanner;
  * 학점기준 : 수,우,미,양,가.
  * name, kor, eng, mat, sum, mean, grd.
  * 이름, 국어, 영어, 수학, 총점, 평균, 등급.
+ *
+ * 삼항연산자 :
+ * (조건식)? 참일때 처리 : 거짓일 때 처리
  */
 public class SungJukV1 {
     public static void main(String[] args) {
-        String name = "지현";
-        int kor = 99, eng = 98, mat = 99;
+        String name = "";
+        int kor, eng, mat;
         int sum = 0;
         double mean = 0.0;
-        char grd =  '가';
+        char grd = ' ';
+        //변수선언
 
-        sum = kor+mat+eng;
-        mean = sum/3;
 
         Scanner scan = new Scanner(System.in);
+        System.out.println("이름");
+        name = scan.nextLine();
+        System.out.println("국어성적");
+        kor = scan.nextInt();
+        System.out.println("수학성적");
+        mat = scan.nextInt();
+        System.out.println("영어성적");
+        eng = scan.nextInt();
+
+        sum = kor+mat+eng;
+        mean = (double)sum/3;
+        grd = (mean >= 90)? '수' : (mean >= 80)? '우' :
+                (mean >= 70)? '미' : (mean >= 60)? '양' : '가' ;
 
         System.out.println("이름 = " + name);
         System.out.println("국어 = " + kor);
@@ -34,18 +49,7 @@ public class SungJukV1 {
         System.out.println("-------------");
         System.out.println("총점 = " + sum);
         System.out.println("평균 = " + mean);
-        System.out.println("등급 = " + grd);
-        /*if(mean<=100 && mean <=90){
-            System.out.println("수");
-        }else if(mean<=89 && mean <=80){
-            System.out.println("우");
-        }else if(mean<=79 && mean <=70){
-            System.out.println("미");
-        }else if(mean<=69 && mean <=60){
-            System.out.println("양");
-        }else if(mean<=59 && mean <=0){
-            System.out.println("가");
+        System.out.println("학점 = " + grd);
 
-        }*/
     }
 }
