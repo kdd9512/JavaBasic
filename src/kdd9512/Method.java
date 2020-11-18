@@ -81,8 +81,7 @@ public class Method {
     // ? - ? = ?
     // ? * ? = ?
     // ? ÷ ? = ?
-    public static Integer computeNum(int a, int b);{
-
+    public static void computeNum(int a, int b){
 
         String fmt1 = "%d + %d = %d\n";
         String fmt2 = "%d - %d = %d\n";
@@ -94,8 +93,8 @@ public class Method {
                         String.format(fmt2, a,b,a-b) +
                         String.format(fmt3, a,b,a*b) +
                         String.format(fmt4, a,b,a/b);
-    }
-
+        System.out.println(result);
+}
 
    /* public static Integer computeNumAdd(int a, int b) { //값 일치를 위해 입력한 Integer = int
         int add=a+b;
