@@ -1,7 +1,7 @@
 package lab;
 
 public class Major {
-    String majNum;
+    String majNo;
     String majName;
     String majIn;
     String majProf;
