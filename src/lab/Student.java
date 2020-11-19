@@ -8,6 +8,7 @@ public class Student {
     String sbj;
     String prof;
 
+    //기본 생성자. Student()쓸때 괄호 안에 아무것도 안쓰면 이 값이 나온다.
     public Student(){
         name = "김태희";
         birth = "1985.3.22";

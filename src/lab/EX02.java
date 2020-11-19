@@ -28,9 +28,9 @@ public class EX02 {
 
         //학과
         com.sbjName = "컴퓨터공학";
-        com.sbjphone = "123-4567-8901";
-        com.sbjlocate = "E동 2층";
-        com.sjbhead = "504";
+        com.sbjPhone = "123-4567-8901";
+        com.sbjLocate = "E동 2층";
+        com.sbjHead = "504";
 
         //과목
         prog.majNo = "0205";
@@ -52,7 +52,7 @@ public class EX02 {
                 kim.name, kim.birth, kim.stNo, kim.sbj, kim.prof);
         //학과 출력
         System.out.printf("\n========학과 정보========\n\n학과명 : %s\n\n전화 : %s\n\n위치 : %s\n\n학과장 : %s\n",
-                com.sbjName, com.sbjlocate, com.sbjphone, com.sjbhead);
+                com.sbjName, com.sbjLocate, com.sbjPhone, com.sbjHead);
         //과목 출력
         System.out.printf("\n=========과목 정보==========\n\n과목번호 : %s\n\n과목명 : %s\n\n개요 : %s\n\n담당교수 : %s\n",
                 prog.majNo, prog.majName, prog.majIn, prog.majProf);
