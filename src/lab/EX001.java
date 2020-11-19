@@ -1,6 +1,6 @@
 package lab;
 
-public class EX02 {
+public class EX001 {
     public static void main(String[] args) {
         //학생 클래스를 이용하여 객체 생성.
         Student kim = new Student();
