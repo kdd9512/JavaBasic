@@ -15,16 +15,30 @@ class Makers {
         this.addr = addr;
         this.mov = mov;
     }
-    public void setMakers(String mkName, String addr, String mov){
+
+    public void setMkName(String mkName) {
         this.mkName = mkName;
+    }
+
+    public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    public void setMov(String mov) {
         this.mov = mov;
     }
-    public void getMakers(){
-        return ;
+
+    public String getMkName() {
+        return mkName;
     }
 
+    public String getAddr() {
+        return addr;
+    }
 
+    public String getMov() {
+        return mov;
+    }
 }
 
 
