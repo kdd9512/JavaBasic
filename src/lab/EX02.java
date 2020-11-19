@@ -25,6 +25,7 @@ public class EX02 {
         kim.sbj = "컴퓨터";
         kim.prof = "504";
 
+
         //학과
         com.sbjName = "컴퓨터공학";
         com.sbjphone = "123-4567-8901";

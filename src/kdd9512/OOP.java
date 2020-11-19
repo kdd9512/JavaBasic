@@ -25,8 +25,21 @@ public class OOP {
         Person choi = new Person();
         Person lee = new Person();
         Person kim = new Person();
+
+        // 기본 생성자로 초기화된 변수 확인.
+        System.out.println(choi.name);
+        System.out.println(kim.name);
+        System.out.println(lee.name);
+
         //하나의 객체명에 다섯가지 변수가 담겨있다.
         //변수 압축이 가능하단 소리.
+
+        //매개변수 생성자를 이용한 객체 생성 및 초기화.
+        Person song = new Person("승희","의사",45,"여","A");
+
+
+
+
 
         //객체 변수(멤버변수)의 값 대입
         //틀은 마련되어 있으나, 값은 써주어야 하므로.
@@ -77,4 +90,36 @@ class Person { //데이터 저장을 위한 틀.
     String gender;
     String blood;
 
+    // 기존것은 각 변수별로 값을 일일히 써야 해서 불편함.
+    //-> 생성자를 이용하여 이러한 불필요한 반복작업을 줄이는 것이 가능함.
+
+    //  생성자 constructor
+    //  멤버변수 값을 초기화시키는 특수한 메서드.
+    //  public 클래스명 (매개변수,...){
+    //        변수 초기화
+    //  }
+    //기본 생성자. 이게 기본값이 되는 것.
+    public Person(){
+        name = "홍길동";
+        job = "무사";
+        age = 18;
+        gender = "남";
+        blood = "O";
+
+
+    }
+    // 매개변수를 사용하는 생성자.
+    // 매개변수명과 멤버변수명이 같은 경우
+    // 변수가림 shadowing 현상이 발생함.(앞의 값이 뒤의 값을 가려버리는 현상.)
+    // 클래스의 멤버변수임을 명확히 표기하기 위해
+    // 변수명 앞에 this 라는 키워드를 추가 작성한다.
+
+    public Person(String name, String job, int age, String gender, String blood) {
+        this.name = name;
+        this.job = job;
+        this.age = age;
+        this.gender = gender;
+        this.blood = blood;
+        //초기화. 메서드 내용에 주목.
+    }
 }

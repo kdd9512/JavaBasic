@@ -3,53 +3,24 @@ package lab;
 public class EX01 {
     public static void main(String[] args) {
         //학생 클래스를 이용하여 객체 생성.
-        //학과 클래스를 이용하여 객체 생성.
-        //과목 클래스를 이용하여 객체 생성.
-        //교수 클래스를 이용하여 객체 생성.
         Student kim = new Student();
-        Student song = new Student();
-        Student jun = new Student();
-        Student soo = new Student();
-        Student aiy = new Student();
+        //초기값 데이터가 김태희 에 관한 정보이므로 공란으로 둔다.
+        Student song = new Student("송혜교","1988.9.17",201250006,"컴퓨터","504");
+        Student jun = new Student("전지현","1986.4.30",201252110,"의상디자인","445");
+        Student soo = new Student("수지","1988.7.13",201351010,"식품영양","556");
+        Student aiy = new Student("아이유","1987.2.25",201353011,"철학","504");
 
+        //학과 클래스를 이용하여 객체 생성.
         Subject com = new Subject();
+
+        //과목 클래스를 이용하여 객체 생성.
         Major prog = new Major();
+
+        //교수 클래스를 이용하여 객체 생성.
         Professor profLee = new Professor();
 
         //각 객체에 대해 변수 입력.
         //블록 선택 모드 ALT + 영역 드래그
-
-        //학생
-        kim.name = "김태희";
-        kim.birth = "1985.3.22";
-        kim.stNo = 201350050;
-        //이 경우는 stNum을 int값으로 잡는게 메모리를 덜 잡아먹음.
-        kim.sbj = "컴퓨터";
-        kim.prof = "504";
-
-        song.name = "송혜교";
-        song.birth = "1988.9.17";
-        song.stNo = 201250006;
-        song.sbj = "컴퓨터";
-        song.prof = "301";
-
-        jun.name = "전지현";
-        jun.birth = "1986.4.30";
-        jun.stNo = 201252110;
-        jun.sbj = "의상디자인";
-        jun.prof = "445";
-
-        soo.name = "수지";
-        soo.birth = "1988.7.13";
-        soo.stNo = 201351010;
-        soo.sbj = "식품영양";
-        soo.prof = "556";
-
-        aiy.name = "아이유";
-        aiy.birth = "1987.2.25";
-        aiy.stNo = 201353011;
-        aiy.sbj = "철학";
-        aiy.prof = "504";
 
         //학과
         com.sbjName = "컴퓨터공학";
