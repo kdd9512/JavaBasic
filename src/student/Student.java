@@ -39,10 +39,13 @@ public class Student {
     }
     public void takeBus(Bus bus){
         bus.take(1000);
-        this.bgt -= 1000;
+        this.bgt -= 1000;//버스요금 1000원
     }
     public void takeSub(Subway sub){
         sub.take(1500);
-        this.bgt -= 1500;
+        this.bgt -= 1500;//지하철요금 1500원
+    }
+    public void showInfo() {
+        System.out.printf("\n학생명 : %2s, 학년 : %2d, 소지금 : %2d\n", name, grade, bgt);
     }
 }
