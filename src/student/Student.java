@@ -1,0 +1,48 @@
+package student;
+
+public class Student {
+   private String name; //이름
+   private int grade; //학년
+   private int bgt; //가진돈
+
+    public Student() {
+    }
+
+    public Student(String name, int grade, int bgt) {
+        this.name = name;
+        this.grade = grade;
+        this.bgt = bgt;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public void setBgt(int bgt) {
+        this.bgt = bgt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public int getBgt() {
+        return bgt;
+    }
+    public void takeBus(Bus bus){
+        bus.take(1000);
+        this.bgt -= 1000;
+    }
+    public void takeSub(Subway sub){
+        sub.take(1500);
+        this.bgt -= 1500;
+    }
+}

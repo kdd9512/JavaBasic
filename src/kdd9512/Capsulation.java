@@ -65,12 +65,12 @@ class Person2 {
     public String getName(){
         return name;
     }
+
     // 이를 JavaBeans 라고 한다.
     // 식별가능하며 재사용성이 높은 소프트웨어를 만들기 위한 기본 규칙이다.
     // 1. 멤버변수는 반드시 private으로 선언
     // 2. 기본생성자가 있어야 함.
-    // 3. setter/getter 메서드를 정의해야 함.(where?)
-
+    // 3. setter/getter 메서드를 정의해야 함.
 
 }
 
