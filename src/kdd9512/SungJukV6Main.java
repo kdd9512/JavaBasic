@@ -108,6 +108,9 @@ public class SungJukV6Main {
 
         public FinalSungJuk(String name, int kor, int eng, int mat, int sum, double mean, char grd, int art, int sci) {
             super(name, kor, eng, mat, sum, mean, grd);
+            //부모 클래스에 정의된 멤버변수 초기화 코드를
+            //super 라는 이름으로 치환해서 호출할 수 있다.
+            // super (생성자 매개변수목록. 여기서 모든 매개변수의 이름과 순서는 부모 클래스의 것과 일치해야 하며 )
             this.art = art;
             this.sci = sci;
         }
