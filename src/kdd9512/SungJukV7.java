@@ -45,6 +45,7 @@ interface ISungJukV6 {
 }
 
 class MidSungJuk2 extends SungJukV6 implements ISungJukV6 {
+    //위에 빈껍데기 fmt 인터페이스 생성. 이하에서 return 으로 fmt 내부 구조를 작성.
     @Override
     public String fmt() {
         return "이름 : %2s\n국어 : %2d\n수학 : %2d\n영어 : %2d\n총점 : %2d\n평균 : %.2f\n학점 : %2c\n";
