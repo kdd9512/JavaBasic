@@ -42,7 +42,7 @@ public class OOPCasting {
 
         m2.attack();
         // 이건 실행된다.
-        // -> unit 변수는 Marine 객체를 Unit 객체로 만든 것이기 때문.
+        // -> unit 변수는 Marine 객체를 Unit 객체로 만든 것이기 때문.(대소문자 구분 주의)
         // 따라서, Marine 객체로의 형변환이 가능.
 
 
