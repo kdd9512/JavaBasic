@@ -3,7 +3,7 @@ package kdd9512;
 import java.util.Scanner;
 
 /**
-/* 파일명 : SungJukV2c
+/* 파일명 : SungJukV3
  * 작성일 : 2020.11.17
  *
  * 프로그램설명 : 성적처리 프로그램 v3.
@@ -17,7 +17,7 @@ import java.util.Scanner;
  *     1. 성적처리 결과 출력시, 출력문을 단 하나만 사용할 것.
  *     2. Math.round()를 이용하여 소수점 둘째 자리까지 값을 반올림 할 것.
  */
-public class SungJukV2c {
+public class SungJukV3 {
     public static void main(String[] args) {
         // 배열변수선언
         // 자료형 변수명[] = new 자료형 [크기];
