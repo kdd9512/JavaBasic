@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * 존재하고 오류가 발생할 가능성이 존재함.
  * - >
  */
-public class Collection {
+public class Collections {
     public static void main(String[] args) {
         Object[] zoo = new Object[10];
 
