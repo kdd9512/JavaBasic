@@ -1,7 +1,5 @@
 package semiproject;
 
-import kdd9512.SungJukV8Interface;
-
 public abstract class EmployeeV1GenericService implements EmployeeV1Interface {
     @Override
     public void inputNew() {

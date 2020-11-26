@@ -1,7 +1,5 @@
 package semiproject;
 
-import kdd9512.SungJukV0;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,7 +13,7 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
     public void inputNew() {
         String empno, fname, lname, email,jobid;
         int phone, hdat, sal, mgrid, depid;
-        double comm;
+        double comm; //각각의 변수 초기화.
         Scanner sc = new Scanner(System.in);
 
         System.out.print("사번 : ");
@@ -32,7 +30,7 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
         hdat = sc.nextInt();
         System.out.print("급여 : ");
         sal = sc.nextInt();
-        sc.skip("\r\n|[\n\r]");
+        sc.skip("\r\n|[\n\r]");//왜인지는 모르겠는데 엔터가 씹힌다. 씹힘방지 코드. sc는 스캐너 호출.
         System.out.print("JobID : ");
         jobid = sc.nextLine();
         System.out.print("성과급 지급율 : ");
