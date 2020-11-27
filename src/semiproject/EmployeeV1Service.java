@@ -9,40 +9,26 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
 
     List<EmployeeVO> empdata = new ArrayList<>();
 
+    EmployeeVO emp = null;
     @Override
     public void inputNew() {
-        String empno, fname, lname, email,jobid;
-        int phone, hdat, sal, mgrid, depid;
-        double comm; //각각의 변수 초기화.
+
+        emp = new EmployeeVO("", "", "", "",
+                "", "", "", 0, 0.0, 0, 0);
+
         Scanner sc = new Scanner(System.in);
+        System.out.print("사번 : ");emp.setEmpno(sc.nextLine());
+        System.out.print("이름 : ");emp.setFname(sc.nextLine());
+        System.out.print("성 : ");emp.setLname(sc.nextLine());
+        System.out.print("email : ");emp.setEmail(sc.nextLine());
+        System.out.print("전화 : ");emp.setPhone(sc.nextLine());
+        System.out.print("직책 : ");emp.setJobid(sc.nextLine());
+        System.out.print("입사일 : ");emp.setHdat(sc.nextLine());
+        System.out.print("급여 : ");emp.setSal(Integer.parseInt(sc.nextLine()));
+        System.out.print("수당 : ");emp.setComm(Double.parseDouble(sc.nextLine()));
+        System.out.print("상사 : ");emp.setMgrid(Integer.parseInt(sc.nextLine()));
+        System.out.print("부서 : ");emp.setDeptid(Integer.parseInt(sc.nextLine()));
 
-        System.out.print("사번 : ");
-        empno = sc.nextLine();
-        System.out.print("이름 : ");
-        fname = sc.nextLine();
-        System.out.print("성 : ");
-        lname = sc.nextLine();
-        System.out.print("emali : ");
-        email = sc.nextLine();
-        System.out.print("전화 : ");
-        phone = sc.nextInt();
-        System.out.print("입사일 : ");
-        hdat = sc.nextInt();
-        System.out.print("급여 : ");
-        sal = sc.nextInt();
-        sc.skip("\r\n|[\n\r]");//왜인지는 모르겠는데 엔터가 씹힌다. 씹힘방지 코드. sc는 스캐너 호출.
-        System.out.print("JobID : ");
-        jobid = sc.nextLine();
-        System.out.print("성과급 지급율 : ");
-        comm = sc.nextDouble();
-        System.out.print("상사번호 : ");
-        mgrid = sc.nextInt();
-        System.out.print("부서번호 : ");
-        depid = sc.nextInt();
-
-
-        EmployeeVO emp = new EmployeeVO(empno, fname, lname, email, phone, hdat, jobid, sal, comm, mgrid, depid);
-        //받은 변수들로 동적배열 생성.
 
         empdata.add(emp);// 받은 변수값을 empdata에 저장.
 
@@ -50,11 +36,11 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
 
     @Override
     public void read() {
-        String fmv = "\n사번 : %2s, 이름 : %2s, 성 : %2s\nemail : %2s, 전화 : %2d\n입사일 : %2d, JobID : %2s\n급여 : %2d, 성과급 지급율 : %.1f\n상 사번호 : %2d, 부서번호 : %2d\n";
+        String fmv = "\n사번 : %2s, 이름 : %2s, 성 : %2s\nemail : %2s, 전화 : %2s\n입사일 : %2s, JobID : %2s\n급여 : %2d, 성과급 지급율 : %.1f\n상사번호 : %2d, 부서번호 : %2d\n";
         Iterator<EmployeeVO> iter = empdata.iterator();
         while (iter.hasNext()) {
             EmployeeVO emp = iter.next();
-            System.out.printf(fmv, emp.getEmpno(), emp.getFname(), emp.getLname(), emp.getEmali(), emp.getPhone(),
+            System.out.printf(fmv, emp.getEmpno(), emp.getFname(), emp.getLname(), emp.getEmail(), emp.getPhone(),
                     emp.getHdat(), emp.getJobid(), emp.getSal(), emp.getComm(), emp.getMgrid(), emp.getDeptid());
         }
 
@@ -62,7 +48,7 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
 
     @Override
     public void readOne() {
-        String fmv = "\n사번 : %2s, 이름 : %2s, 성 : %2s\nemail : %2s, 전화 : %2d\n입사일 : %2d, JobID : %2s\n급여 : %2d, 성과급 지급율 : %.1f\n상 사번호 : %2d, 부서번호 : %2d\n";
+        String fmv = "\n사번 : %2s, 이름 : %2s, 성 : %2s\nemail : %2s, 전화 : %2s\n입사일 : %2s, JobID : %2s\n급여 : %2d, 성과급 지급율 : %.1f\n상 사번호 : %2d, 부서번호 : %2d\n";
 
         Scanner sc = new Scanner(System.in);
         System.out.println("조회할 사원의 사번 : ");
@@ -70,11 +56,12 @@ public class EmployeeV1Service extends EmployeeV1GenericService {
 
         for (EmployeeVO emp : empdata) {
             if (emp.getEmpno().equals(empno))
-                System.out.printf(fmv, emp.getEmpno(), emp.getFname(), emp.getLname(), emp.getEmali(), emp.getPhone(),
+                System.out.printf(fmv, emp.getEmpno(), emp.getFname(), emp.getLname(), emp.getEmail(), emp.getPhone(),
                         emp.getHdat(), emp.getJobid(), emp.getSal(), emp.getComm(), emp.getMgrid(), emp.getDeptid());
             break;//출력 후 이 메서드를 나감.
         }
     }
+
     @Override
     public void modify() {
         super.modify();

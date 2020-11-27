@@ -1,6 +1,5 @@
 package kdd9512;
 
-import javax.xml.soap.SOAPConnectionFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -16,6 +15,8 @@ public class SungJukV8Service extends SungJukV8GenericService {
     //입력받은 모든 성적데이터를 저장하는 동적배열 변수
     List<SungJukV0> sjdata = new ArrayList<>();
 
+    // 입력받은 성적데이터를 저장하는 변수
+    SungJukV0 sj = null;
     @Override
     /**
      * 이름과 성적데이터를 입력받아
@@ -37,8 +38,7 @@ public class SungJukV8Service extends SungJukV8GenericService {
         eng = sc.nextInt();
 
         //입력받은 성적데이터를 동적배열에 저장(저장한 값은 V0에서 제시한대로 처리), 객체화.
-        SungJukV0 sj =
-                new SungJukV0(name, kor, eng, mat, 0, 0, ' ');
+       sj = new SungJukV0(name, kor, eng, mat, 0, 0, ' ');
         //모든 항목에 대해 값을 입력해야 에러가 안뜸. 일단 공값
 
         // 총점,평균,학점을 계산. 이 객체를 일단 V0으로 가지고 감.

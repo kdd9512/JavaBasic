@@ -8,9 +8,9 @@ public class EmployeeVO {//VO클래스 구현 이하는 변수들. private 필�
     private String empno;
     private String fname;
     private String lname;
-    private String emali;
-    private int phone;
-    private int hdat;
+    private String email;
+    private String phone;
+    private String hdat;
     private String jobid;
     private int sal;
     private double comm;
@@ -20,12 +20,12 @@ public class EmployeeVO {//VO클래스 구현 이하는 변수들. private 필�
     public EmployeeVO() {
     }// 기본생성자. 필수조건
 
-    public EmployeeVO(String empno, String fname, String lname, String emali, int phone,
-                      int hdat, String jobid, int sal, double comm, int mgrid, int deptid) {
+    public EmployeeVO(String empno, String fname, String lname, String email, String phone,
+                      String hdat, String jobid, int sal, double comm, int mgrid, int deptid) {
         this.empno = empno;
         this.fname = fname;
         this.lname = lname;
-        this.emali = emali;
+        this.email = email;
         this.phone = phone;
         this.hdat = hdat;
         this.jobid = jobid;
@@ -47,15 +47,15 @@ public class EmployeeVO {//VO클래스 구현 이하는 변수들. private 필�
         this.lname = lname;
     }
 
-    public void setEmali(String emali) {
-        this.emali = emali;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void setHdat(int hdat) {
+    public void setHdat(String hdat) {
         this.hdat = hdat;
     }
 
@@ -94,15 +94,15 @@ public class EmployeeVO {//VO클래스 구현 이하는 변수들. private 필�
         return lname;
     }
 
-    public String getEmali() {
-        return emali;
+    public String getEmail() {
+        return email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public int getHdat() {
+    public String getHdat() {
         return hdat;
     }
 
