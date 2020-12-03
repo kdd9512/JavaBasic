@@ -92,6 +92,15 @@
  		references employees (employee_id)
  );
  
+alter table job_history
+add constraint fk_jbh_emp
+foreign key(emp_id)
+references employees (emp_id);
+-- 식별관계 (pk - pk)
+
+alter table job_history 
+add constraint pk_jbh_emp
+primary key(emp_id, start_date)
 
 
 
