@@ -1,58 +1,106 @@
-create table regions ( -- 1
-	region_id int primary key,
-	region_name char(25)
-);
+-- 계정은  playground 이며
+-- 비밀번호는 playground2020 인
+-- 데이터베이스 사용자 계정을 생성
 
-create table countries ( -- 2
-	country_id char(5),
-	country_name varchar(15) primary key,
-	region_id int,
-	foreign key (region_id)
-	references regions (regions_id)
-);
+-- create database playground
+-- create user 'playground'@'%'
+-- identified by 'playground2020';
+-- grant ~ ont playground.*
+-- to 'playground'@'%'
+-- with GRANT OPTION;
 
-create table locations ( -- 3 
-	locate_id int primary key,
-	street_add varchar(40),
-	postal_cod varchar(40),
-	city varchar(20) primary key,
-	state_province varchar(20) primary key, 
-	country_id char(5)
-);
+-- flush privileges;
 
-create table departments ( -- 4
-	depart_id int primary key,
-	depart_name char(25) primary key,
-	manage_id int primary key,
-	locate_id int
-);
 
-create table jobs( -- 5
-	job_id char(10) primary key,
-	job_title varchar(10) primary key,
-	min_salary int,
-	max_salary int
-);
+ -- regions
+ create table regions (
+ 		region_id int primary key,
+		region_name varchar(30)
+ );
 
-create table employees( -- 6
+ -- countries 
+ create table countries (
+ 		country_id char(2),
+		country_id varchar(30),
+ 		region_id int,
+ 		foreign key (region_id)
+ 		references regions (region_id)
+ );
 
-	empid int primary key,
-	fname varchar(20),
-	lname char(20),
-	emali char(20),
-	phone varchar(15),
-	hdate varchar(10) primary key,
-	jobid char(10),
-	salary int,
-	comm double,
-	manage_id int,
-	depart_id int
-);	
+ -- locations
+ create table locations (
+ 		locate_id int primary key,
+ 		street_address varchar(50),
+ 		postal_code varchar(10),
+ 		city varchar(20),
+ 		state_province varchar(25),
+ 		country_id char(2),
+ 		foreign key(country_id)
+ 		references countries (country_id)
+ );
 
-create table job_history ( -- 7
-	empid int,
-	start_date varchar(15) primary key,
-	end_date varchar(15),
-	job_id char(10),
-	depart_id int
-);
+-- -- departments
+ create table departments(
+ 		department_id int primary key,
+ 		department_name varchar(30),
+ 		manager_id int,
+ 		location_id int,
+ 		foreign key (locate_id)
+ 		references locations (locate_id)
+ );
+
+ -- jobs
+ create table jobs (
+ 		job_id varchar(15) primary key,
+ 		job_title varchar(50),
+ 		min_salary int,
+ 		max_salary int,
+ );
+
+ -- employees
+ create table employees (
+ 		employee_id int primary key,
+ 		first_name varchar(25),
+ 		last_name varchar(25),
+ 		email varchar(30),
+ 		phone_number varchar(15),
+ 		hire_date datetime,
+ 		job_id varchar(15),
+ 		salary int,
+ 		commission_pct decimal(5,2), -- double은 소수점 이하가 안짤리므로 소수점을 조절가능한 decimal이 훨씬 낫다.
+ 		manager_id int, -- 이건 사원번호와 관련있는 자료이므로 사원번호와 자료형식을 맞추어야 한다.
+ 		department_id int,
+ 		foreign key (manager_id)
+ 		references employees (employee_id),
+ 		foreign key (job_id)
+ 		references jobs (job_id),
+ 		foreign key (department_id)
+ 		references departments (department_id)
+ );
+ -- job_history
+ create table job_history(
+ 		employee_id int,
+ 		start_date datetime,
+ 		end_date datetime,
+ 		job_id varchar(15),
+ 		department_id int,
+ 		foreign key (department_id)
+ 		references departments (department_id),
+ 		foreign key (job_id)
+ 		references jobs (job_id),
+ 		foreign key (manager_id)
+ 		references employees (employee_id)
+ );
+ 
+alter table job_history
+add constraint fk_jbh_emp
+foreign key(emp_id)
+references employees (emp_id);
+-- 식별관계 (pk - pk)
+
+alter table job_history 
+add constraint pk_jbh_emp
+primary key(emp_id, start_date)
+
+
+

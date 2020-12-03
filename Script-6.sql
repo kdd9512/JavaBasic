@@ -97,7 +97,7 @@ information_schema.table_constraints;
 
 -- 기본 키 제약조건 생성
 -- alter table 테이블명
--- add constraint 제약조건명 primary key (컬럼명)
+-- add constraint 제약조건명 primary key (컬럼명);
 
 create table employees (
  		employee_id int,
