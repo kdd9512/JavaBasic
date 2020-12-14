@@ -19,7 +19,7 @@ public class ArrayLists {
     public static void main(String[] args) {
         ArrayList<String> names = new ArrayList<>();
 
-        // 데이터 추가 : add(대상); 이 순서대로 값이 삽입된다.
+        // 데이터 추가 : ArrayList이름 . add(대상); 이 순서대로 값이 삽입된다.
         // 기존값이 있다면 기존값의 가장 마지막 값부터 순서대로 삽입됌.
         names.add("혜교");
         names.add("지현");
