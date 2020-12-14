@@ -5,7 +5,7 @@ package kdd9512;
  * 추상 메서드를 포함하는 클래스
  * 추상 메서드 : 메서드의 선언부만 있고, 몸체가 없는 메서드.
  * 메서드의 몸체는 이것을 상속하는 자식(=하위) 클래스에서 정의함.
- * 따라서, 추상클래스는 불완전 클래스이므로, 객체회할 수 없음.
+ * 따라서, 추상클래스는 불완전 클래스이므로, 객체화할 수 없음.
  * 추상 메서드나 추상 클래스는  abstract 라는 키워드를 사용함.
  *
  * 1. 부모클래스를 상속하고 싶지 않을때.
@@ -25,7 +25,7 @@ public class AbstractClass {
 
 abstract class Animal2 {
     protected  int weight;
-    abstract String cry(); //추상 메서드.
+    abstract String cry(); //추상 메서드. () 뒤를 보면 메서드인데도 {} 가 없다. 일종의 그냥 '틀'.
 }
 class Cat2 extends Animal2 {
     @Override

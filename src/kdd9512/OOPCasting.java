@@ -3,7 +3,7 @@ package kdd9512;
 /**
  * 클래스/인터페이스 형변환
  * 특정 객체가 자식클래스/인터페이스 타입에서
- * 부모클래스/인터페이스 타입 또는 반대로 형변환하는 것으 ㄹ의미함.
+ * 부모클래스/인터페이스 타입 또는 반대로 형변환하는 것을 의미함.
  */
 public class OOPCasting {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class OOPCasting {
         // Marine 객체가 자동으로 Unit 객체로 형변환.
         // 자식 객체가 부모 객체로 형변환 되었다.
         // 이처럼 상속관계에 있는 클래스 간의 객체 생성시
-        // 자식클래스 타입의 객체가 부모클래스 타입의 객체로
+        // 자식클래스 타입의 객체를 부모클래스 타입의 객체로
         // 선언하는 경우를 "업캐스팅(Upcasting)" 이라고 한다.
         unit.attack();
 
@@ -32,7 +32,6 @@ public class OOPCasting {
         // 선언하는 경우를 "다운캐스팅(Downcasting)" 이라고 한다.
         // 컴파일 시에는 오류가 없다고 나오나
         // 실제 실행하면 오류가 발생한다.
-
         //f2.attack();
 
         // Marine m3 = new Marine();
@@ -42,7 +41,7 @@ public class OOPCasting {
 
         m2.attack();
         // 이건 실행된다.
-        // -> unit 변수는 Marine 객체를 Unit 객체로 만든 것이기 때문.(대소문자 구분 주의)
+        // -> unit 변수는 Marine 객체를 Unit 객체로 만든 것(=업캐스팅)이기 때문.(업캐스팅 참고. 대소문자 구분 주의)
         // 따라서, Marine 객체로의 형변환이 가능.
 
 

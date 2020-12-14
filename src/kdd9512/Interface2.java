@@ -6,7 +6,7 @@ package kdd9512;
  * "메뉴 A" 는 하나의 메뉴임. -> 단순정보이며, 복잡한 정보가 불요
  *
  * 2. 식당에서 조리를 하는 조리사 입장에서
- * "메뉴 A" 를 생산하기 위해 필요한 작업이므로 복잡한 정보를 요구함.
+ * "메뉴 A" 를 생산하기 위해 필요한 것은 작업이므로 복잡한 정보를 요구함.
  *
  * 3. 식당에서 고객과 조리사를 관리하는 점주 입장에서
  * "메뉴 A"는 하나의 상품.
@@ -20,7 +20,7 @@ package kdd9512;
  * 대부분의 음식점에서 "메뉴 A" 를 요리하고 있음
  * 하지만, 조리사의 역량에 따라 기본을 유지하면서 제각각의 결과믈울
  * 만들어 내는 것이 가능.
- * 식당 별, 조금의 차이는 존재하나,
+ *
  */
 
 /*기본 베이스 클래스.
@@ -48,17 +48,17 @@ public class Interface2 {
     }
 
 }
-class Animal4 {
+class Animal4 { //부모 클래스. 기본정보 탑재, protected 필수.
     protected int height;
     protected int weight;
 
 }
-interface  Animal4Action {
+interface  Animal4Action {//인터페이스
     String cry();
 }
-class Animal4Base extends Animal4 implements Animal4Action{
+class Animal4Base extends Animal4 implements Animal4Action{ //자식클래스, 인터페이스 구현
 
-    @Override
+    @Override// 인터페이스 오버라이딩 CTRL + SPACE 나 ALT + ENTER 후 검색하여 적용
     public String cry() { return "동물이 웁니다"; }
 }
 class Cat4 extends Animal4Base { }

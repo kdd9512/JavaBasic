@@ -38,7 +38,7 @@ public class Q26_Salary {
                 tax = sal + (sal / 15);
             } else if (sal > 6000 && i == 1) {
                 tax = sal + (sal / 35);
-            }
+            }//이게 단 한줄로 가능하다는데....
 
             switch (i) {
                 case 1:

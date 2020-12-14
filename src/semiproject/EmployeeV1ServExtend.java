@@ -19,7 +19,7 @@ public class EmployeeV1ServExtend extends EmployeeV1Service {
         }
     }
 
-    private BufferedWriter bw = null;
+    private BufferedWriter bw = null; //BufferedWriter 초기화
 
     public void displayMenu() {
         StringBuilder sb = new StringBuilder();
@@ -83,7 +83,7 @@ public class EmployeeV1ServExtend extends EmployeeV1Service {
             String[] e = br.readLine().split(",");
 
             //String empno, String fname, String lname, String emali, String phone,
-            //int hdat, String jobid, int sal, double comm, int mgrid, int deptid
+            //String hdat, String jobid, int sal, double comm, int mgrid, int deptid
 
             emp = new EmployeeVO(e[0], e[1], e[2], e[3], e[4],
                     e[5], e[6],

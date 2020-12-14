@@ -12,33 +12,38 @@ import java.util.Scanner;
 public class Q25_Lotto {
     public static void main(String[] args) {
         int[] num = new int[3];
-        int[] Lot = new int[3];
-        int i , j ;
 
-        for(i = 0 ; i < 3 ; i++) {
+        int i, j;
+
+        for (i = 0; i < 3; i++) {
             System.out.println(i + 1 + "번 째 수를 입력하시오.");
-                Scanner sc = new Scanner(System.in);
-                num[i] = sc.nextInt();
-                if (num[i] < 1 || num[i] > 45) {
-                    System.out.println("1부터 45까지의 수를 입력하시오.");
-                    i--;
-                    continue;
-                }
-                if(i>0){
-                    for(j = 0 ; j < i ; j++) {
-                        if (num[j] == num[i]) {
-                            System.out.println("중복 값은 입력할 수 없습니다.");
-                            i--;
-                            continue;
-                        }
-                        System.out.println("-----------------결과값 출력-----------------");
-                        // 번호가 3개가 찍혀서 결과값이 나와야 함.
-                            System.out.println("입력한 값 : " + Arrays.toString((num)));
-
+            Scanner sc = new Scanner(System.in);
+            num[i] = sc.nextInt();
+            if (num[i] < 1 || num[i] > 45) {
+                System.out.println("1부터 45까지의 수를 입력하시오.");
+                i--;
+                continue;
+            }
+            if (i > 0) {
+                for (j = 0; j < i - 1; j++) {
+                    //모든 값을 받기는 성공했으나, 2번 입력시 중복체크가 적용 안되는 문제 발생.
+                    if (num[j] == num[i]) {
+                        System.out.println("중복 값은 입력할 수 없습니다.");
+                        i--;
+                        continue;
                     }
+                    System.out.println("-----------------결과값 출력-----------------");
+                    System.out.println("입력한 값 : " + Arrays.toString((num)));
+
                 }
+            }
+        }
+        int[] lot = new int[3];
+
+        for (i = 0; i < lot.length; i++) {
+            lot[i] = (int) (Math.random() * 45) + 1;
 
         }
-
+        System.out.println("당첨번호 : " + Arrays.toString((lot)));
     }
 }
