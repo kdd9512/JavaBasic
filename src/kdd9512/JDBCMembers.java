@@ -39,40 +39,32 @@ public class JDBCMembers {
 
             String USR = "bigdata";
             String PWD = "bigdata2020";
+            Connection conn = null;
+            Statement stmt = null;
 
             try {
                 Class.forName(DRV);
+                conn = DriverManager.getConnection(URL, USR, PWD);
+                stmt = conn.createStatement();
+
+                int cnt = stmt.executeUpdate(sql);
+                if (cnt > 0) System.out.println("입력 성공.");
             } catch (ClassNotFoundException e) {
                 System.out.println("JDBC 드라이버 확인 요망.");
-            }
-
-            Connection conn = null;
-            try {
-                conn = DriverManager.getConnection(URL, USR, PWD);
             } catch (SQLException sqe) {
                 System.out.println("DB 주소 혹은 ID/비밀번호 재확인 요망.");
-            }
+            } finally {
+                if (stmt != null)
+                    try {
+                        stmt.close();
+                    } catch (SQLException sqe) {
+                    }
 
-            Statement stmt = null;
-            try {
-                stmt = conn.createStatement();
-                boolean isFail = stmt.execute(sql);
-                if (!isFail) System.out.println("입력 성공.");
-            } catch (SQLException sqe) {
-                System.out.println("SQL 실행 오류");
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqe) {
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException sqe) {
-                }
+                if (conn != null)
+                    try {
+                        conn.close();
+                    } catch (SQLException sqe) {
+                    }
             }
         }
 
