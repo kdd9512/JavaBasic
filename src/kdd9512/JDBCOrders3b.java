@@ -25,9 +25,9 @@ public class JDBCOrders3b {
         conn = JDBCUtil.makeConn();
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, orderid);
-            rs = pstmt.executeQuery();
+            pstmt.setString(1, orderid); // 문자로 출력 setString.
 
+            rs = pstmt.executeQuery();
             while (rs.next()) {
                 String ordid = rs.getString(1);
                 String custid = rs.getString(2);

@@ -14,18 +14,19 @@ public class JDBCOrders3c {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        String sql = "select * from BookOrder where custid like ?";
+        String sql = "select * from BookOrder where orderdate like ?";
         String fmt = "%s %s %s %s %s \n";
         StringBuilder sb = new StringBuilder();
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("고객ID 입력 : ");
-        String custid = sc.nextLine();
+        System.out.print("주문일자는 : ");
+        String orderdate = sc.nextLine();
 
+        // 날짜로 검색. 날짜 양식에 맞게 0000-00-00 식으로 검색해야 하긴하지만 일단 가능하긴 함.
         conn = JDBCUtil.makeConn();
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, '%'+custid+'%');
+            pstmt.setString(1, orderdate + '%'); // 'orderdate%' 로 sql에 찍혀 DB에 들어간다.
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -33,10 +34,10 @@ public class JDBCOrders3c {
                 String cstid = rs.getString(2);
                 String bookid = rs.getString(3);
                 String saleprice = rs.getString(4);
-                String orderdate = rs.getString(5);
+                String orddate = rs.getString(5);
 
                 String result = String.format(fmt,
-                        ordid, cstid, bookid, saleprice, orderdate);
+                        ordid, cstid, bookid, saleprice, orddate);
                 sb.append(result);
 
             }

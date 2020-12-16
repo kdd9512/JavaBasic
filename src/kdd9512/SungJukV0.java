@@ -12,11 +12,13 @@ package kdd9512;
  */
 // SungJukV5Main -> SungJukVO -> SungJukService
 public class SungJukV0 {
+    private int sjno;
     private String name;
     private int kor, eng, mat;
     private int sum;
     private double mean;
     private char grd;
+    private String regdate;
 
     public SungJukV0() {
     }
@@ -32,6 +34,34 @@ public class SungJukV0 {
 
     }
 
+    public SungJukV0(int sjno, String name,
+                     int kor, int eng, int mat, int sum, double mean, char grd, String regdate) {
+        this.sjno = sjno;
+        this.name = name;
+        this.kor = kor;
+        this.eng = eng;
+        this.mat = mat;
+        this.sum = sum;
+        this.mean = mean;
+        this.grd = grd;
+        this.regdate = regdate;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setSjno(int sjno) {
+        this.sjno = sjno;
+    }
+
+    public int getSjno() {
+        return sjno;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
+    }
 
     public void setName(String name) {
         this.name = name;

@@ -17,6 +17,7 @@ public class EmployeeVO {//VO클래스 구현 이하는 변수들. private 필�
     private int mgrid;
     private int deptid;
 
+
     public EmployeeVO() {
     }// 기본생성자. 필수조건
 
