@@ -45,6 +45,8 @@ class NonOverloading {
     // 생성한 메서드마다 이름을 제각각으로 정해야하기에
     // 개발자가 일일히 기억해서 사용해야 하는 불편함이 존재한다.
     // 메서드명 중복을 허용하지 않기 떄문.
+
+
 class ApplyOverloading {
         public int sum(int a, int b) {
             return a + b;

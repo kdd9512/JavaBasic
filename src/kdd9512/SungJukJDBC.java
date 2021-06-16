@@ -15,10 +15,10 @@ public class SungJukJDBC extends JDBCUtil2{
 
     public static String updateSungJuk =
             "update sungjuk " +
-                    "set kor = ?, mat = ?, eng = ?, tot = ?, mean = ?, grd = ?"
-                    + "where sjno = ?";
+                    " set kor = ?, mat = ?, eng = ?, tot = ?, mean = ?, grd = ?, "
+                    + " regdate = sysdate() where sjno = ?";
 
     public static String deleteSungJuk =
-            "delete sungjuk where sjno = ?";
+            "delete from sungjuk where sjno = ?";
 
 }

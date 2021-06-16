@@ -16,5 +16,12 @@ public class EmployeeJDBC extends JDBCUtil2 {
             "select * from Employee where empno = ? " +
                     " order by empno desc ";
 
+    public static String updateEmp =
+            "update Employee set fname = ?, lname = ?, email = ?, phone = ?, " +
+                    " hrdate = ?, mngid = ?, dptid = ? where empno = ? ";
+
+    public static String deleteEmp =
+            "delete from Employee where empno = ? ";
+
 
 }

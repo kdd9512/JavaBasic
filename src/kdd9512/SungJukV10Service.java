@@ -1,6 +1,8 @@
 package kdd9512;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -116,6 +118,36 @@ public class SungJukV10Service {
                 sj.getEng(), sj.getSum(), sj.getMean(),
                 sj.getGrd(), sj.getRegdate());
 
+        System.out.println(result);
+
+    }
+
+    public void modiftSungJuk() {
+        SungJukV0 sj = new SungJukV0(); // return할 값 담을 sj
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("수정할 성적번호 : ");
+        sj.setSjno(sc.nextInt());
+        System.out.print("수정할 국어성적 : ");
+        sj.setKor(sc.nextInt());
+        System.out.print("수정할 수학성적 : ");
+        sj.setMat(sc.nextInt());
+        System.out.print("수정할 영어성적 : ");
+        sj.setEng(sc.nextInt()); // 입력받는거.
+
+       computeSungJuk(sj); // 계산해서 합/평균/등급 값을 sj에
+
+        String result = SungJukV10DAO.updateSungJuk(sj);
+        System.out.println(result);
+    }
+
+    public void deleteSungJuk() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("삭제할 성적번호 : ");
+        int sjno = sc.nextInt();
+
+        String result = SungJukV10DAO.removeSungJuk(sjno);
         System.out.println(result);
 
     }

@@ -30,6 +30,7 @@ public class EmployeeVO2 {
         this.dptid = dptid;
     }
 
+
     public void setEmpno(int empno) {
         this.empno = empno;
     }

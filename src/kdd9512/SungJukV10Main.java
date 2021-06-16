@@ -24,8 +24,8 @@ public class SungJukV10Main {
                 case "1" : sjsrv.newSungJuk();break;
                 case "2" : sjsrv.readSungJuk();break;
                 case "3" : sjsrv.readOneSungJuk();break;
-                case "4" : break;
-                case "5" : break;
+                case "4" : sjsrv.modiftSungJuk();break;
+                case "5" : sjsrv.deleteSungJuk();break;
                 case "0" : System.out.println("\n시스템을 종료합니다....\n");System.exit(0);break;
                 default : System.out.println("\n잘못 입력 하셨습니다.\n");break;
             }

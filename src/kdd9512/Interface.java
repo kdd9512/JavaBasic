@@ -35,16 +35,18 @@ interface Animal3Action {
     //=public static String COLOR = "brown";
     String COLOR = "brown";
 
-    abstract String cry();//규칙에 맞는 코드를 짤 수 있게끔 틀만 제공함. 그렇기에 cry() 안의 내용은 없는 것.
+    String cry();
+
+    //규칙에 맞는 코드를 짤 수 있게끔 틀만 제공함. 그렇기에 cry() 안의 내용은 없는 것.
     // = 그냥 변수유형 변수명 만 제시하여 String cry(); 로 써도 가능하다.
     // 이 경우, 원문 public abstract String cry(); 을 축약한 효과가 나옴.
 
     // protected abstract String cry(); 는 허용하지 않는다.
-    // 애초에 양식을 제공하기 위해 존재하는 클래스인데 그 역할이 불가능해 지기 때문
+    // 애초에 양식을 제공하기 위해 존재하는 클래스인데 protexted 로 외부접속을 불허하면 그 역할이 불가능해 지기 때문
 }
 class Cat3 extends Animal3 implements Animal3Action {//불완전메서드 작성 뒤 ALT + ENTER 후 Animal3Action 오버라이드.
 
-    //Animal3의 하위클래스(extends)이며, Animal3Action 메서드로 이를 구현함(implements){}
+    //Animal3의 하위클래스(extends)이며, Animal3Action 메서드(인터페이스)를 틀로 이를 구현함(implements){}
     @Override
     public String cry() {
         return "야_옹";
